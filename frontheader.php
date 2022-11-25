@@ -52,9 +52,8 @@ function success()
                             Home <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <ul class="dropdown-menu level1">
-                            <li><a href="index-2.html">Home 01</a></li>
-                            <li><a href="homev2.html">Home 02</a></li>
-                            <li><a href="homev3.html">Home 03</a></li>
+                            <li><a href="index.php">Home</a></li>
+                         
                         </ul>
                     </li>
                     <li class="dropdown first">
@@ -62,19 +61,19 @@ function success()
                             movies<i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <ul class="dropdown-menu level1">
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movie grid<i class="ion-ios-arrow-forward"></i></a>
                                 <ul class="dropdown-menu level2">
                                     <li><a href="moviegrid.html">Movie grid</a></li>
                                     <li><a href="moviegridfw.html">movie grid full width</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li><a href="movielist.html">Movie list</a></li>
                             <li><a href="moviesingle.html">Movie single</a></li>
                             <li class="it-last"><a href="seriessingle.html">Series single</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown first">
+                    <!-- <li class="dropdown first">
                         <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
                             celebrities <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
@@ -105,7 +104,7 @@ function success()
                             <li><a href="userprofile.html">user profile</a></li>
                             <li class="it-last"><a href="userrate.html">user rate</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
                 <?php
                 if (isset($_SESSION['userId'])) { ?>

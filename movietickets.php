@@ -49,6 +49,7 @@ if (!isset($_GET['userid']) || !isset($_GET['cinemaId']) || !isset($_GET['movieI
     if (mysqli_num_rows($reservedseatsinfo) > 0) {
 
         $reservedata = json_encode(mysqli_fetch_all($reservedseatsinfo, MYSQLI_NUM)); ?>
+        
         <script>
             const reserved = <?php echo $reservedata; ?>
         </script>

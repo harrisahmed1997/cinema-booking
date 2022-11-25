@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 10:04 AM
+-- Generation Time: Nov 25, 2022 at 12:21 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -131,6 +131,33 @@ INSERT INTO `reviews` (`reviewId`, `userId`, `review`, `ts`, `dt`, `movieId`, `r
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `seatreserve`
+--
+
+CREATE TABLE `seatreserve` (
+  `userId` int(11) DEFAULT NULL,
+  `seatno` varchar(255) DEFAULT NULL,
+  `showId` int(11) DEFAULT NULL,
+  `price` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `seatreserve`
+--
+
+INSERT INTO `seatreserve` (`userId`, `seatno`, `showId`, `price`) VALUES
+(1, 'A1', 2, 1000),
+(1, 'B2', 2, 1000),
+(1, 'A5', 2, 1000),
+(1, 'B4', 2, 1000),
+(1, 'C3', 2, 1000),
+(1, 'A3', 5, 1500),
+(1, 'A1', 5, 1500),
+(1, 'B2', 5, 1500);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `showtimes`
 --
 
@@ -206,6 +233,13 @@ ALTER TABLE `reviews`
   ADD KEY `movieId` (`movieId`);
 
 --
+-- Indexes for table `seatreserve`
+--
+ALTER TABLE `seatreserve`
+  ADD KEY `userId` (`userId`),
+  ADD KEY `showId` (`showId`);
+
+--
 -- Indexes for table `showtimes`
 --
 ALTER TABLE `showtimes`
@@ -276,6 +310,13 @@ ALTER TABLE `orders`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`),
   ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`movieId`) REFERENCES `movies` (`movieId`);
+
+--
+-- Constraints for table `seatreserve`
+--
+ALTER TABLE `seatreserve`
+  ADD CONSTRAINT `seatreserve_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`),
+  ADD CONSTRAINT `seatreserve_ibfk_2` FOREIGN KEY (`showId`) REFERENCES `showtimes` (`showId`);
 
 --
 -- Constraints for table `showtimes`
